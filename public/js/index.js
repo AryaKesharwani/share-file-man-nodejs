@@ -15,7 +15,11 @@ const emailForm = document.querySelector("#emailForm");
 
 const toast = document.querySelector(".toast");
 
-const baseURL = "https://innshare.herokuapp.com";
+const baseURL = "http://127.0.0.1:2000";
+// const baseURL = "http://innshare.herokuapp.com";
+// const baseURL = "https://share-file-man.herokuapp.com";
+
+
 const uploadURL = `${baseURL}/api/files`;
 const emailURL = `${baseURL}/api/files/send`;
 
@@ -146,7 +150,7 @@ emailForm.addEventListener("submit", (e) => {
     emailTo: emailForm.elements["to-email"].value,
     emailFrom: emailForm.elements["from-email"].value,
   };
-  console.log(formData);
+  // console.log(formData);
   fetch(emailURL, {
     method: "POST",
     headers: {

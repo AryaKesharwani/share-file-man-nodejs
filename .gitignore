@@ -3,3 +3,4 @@ uploads/*
 !uploads/.gitkeep
 package-lock.json
 .env
+.vscode

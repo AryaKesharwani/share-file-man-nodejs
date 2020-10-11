@@ -16,6 +16,7 @@ connectDB();
 const corsOptions = {
     origin: process.env.ALLOWED_CLIENTS.split(',')
 }
+console.log(corsOptions);
 app.use(cors(corsOptions))
 
 // Template engine
@@ -23,6 +24,7 @@ app.set('views',path.join(__dirname,"/views"))
 app.set("view engine",'ejs');
 
 // routes
+app.use('/',require('./routes/home'))
 app.use('/api/files',require('./routes/files'))
 app.use('/files',require('./routes/show'));
 app.use('/files/download',require('./routes/download'))
